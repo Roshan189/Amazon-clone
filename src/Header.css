@@ -61,6 +61,10 @@
   justify-content: space-evenly;
 }
 
+.header-nav a {
+  text-decoration: none;
+}
+
 .header-option {
   display: flex;
   flex-direction: column;

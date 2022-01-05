@@ -2,7 +2,7 @@ import React from "react";
 import "./CheckoutProduct.css";
 import { useStateValue } from "./StateProvider";
 
-const CheckProduct = ({ id, image, title, price, rating }) => {
+const CheckoutProduct = ({ id, image, title, price, rating }) => {
   const [{ basket }, dispatch] = useStateValue();
 
   const removeFromBasket = () => {
@@ -39,4 +39,4 @@ const CheckProduct = ({ id, image, title, price, rating }) => {
   );
 };
 
-export default CheckProduct;
+export default CheckoutProduct;
