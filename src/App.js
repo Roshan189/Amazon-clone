@@ -7,17 +7,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
-import Payment from "./Payment";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
+// import Payment from "./Payment";
+// import { loadStripe } from "@stripe/stripe-js";
+// import { Elements } from "@stripe/react-stripe-js";
 import Orders from "./Orders";
 
-const promise = loadStripe(
-  "pk_test_51KEXdGSJCC56qf4tYTKyX8GUI2xcBhCkAiV1dS6KBLWzMUJxt6dyfSIni7xSdGb8PlQ0TSsMqi2yJWa7cA5tBQ2g00jBtuL4bH"
-);
+// const promise = loadStripe(
+//   "pk_test_51KEXdGSJCC56qf4tYTKyX8GUI2xcBhCkAiV1dS6KBLWzMUJxt6dyfSIni7xSdGb8PlQ0TSsMqi2yJWa7cA5tBQ2g00jBtuL4bH"
+// );
 
 function App() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [dispatch] = useStateValue();
 
   useEffect(() => {
     // will only run once when the app component loads...
@@ -39,7 +39,7 @@ function App() {
         });
       }
     });
-  }, []);
+  }, [dispatch]);
   return (
     <Router>
       <div className="app">
@@ -77,9 +77,9 @@ function App() {
             element={
               <>
                 <Header />
-                <Elements stripe={promise}>
+                {/* <Elements stripe={promise}>
                   <Payment />
-                </Elements>
+                </Elements> */}
               </>
             }
           />
